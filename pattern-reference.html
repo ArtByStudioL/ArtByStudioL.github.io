@@ -9141,11 +9141,9 @@ function rg(){
     var has=p.images&&p.images.length>0;
     var pic=has?'<img class="cimg" src="'+p.images[0]+'" loading="lazy" alt="">':'';
     var np=has?'':'<div class="nopic">No image</div>';
-    html+='<div class="card" data-idx="'+p._i+'">'+pic+np+'<div class="cbody"><div class="cname">'+esc(p.name)+'</div>'+(p.date_raw?'<div class="cdate">'+esc(p.date_raw)+'</div>':'')+'</div></div>';
+    html+='<div class="card" data-idx="'+p._i+'" onclick="om(P['+p._i+'])">'+pic+np+'<div class="cbody"><div class="cname">'+esc(p.name)+'</div>'+(p.date_raw?'<div class="cdate">'+esc(p.date_raw)+'</div>':'')+'</div></div>';
   }
   g.innerHTML=html;
-  var cards=g.querySelectorAll('.card');
-  for(var j=0;j<cards.length;j++)cards[j].addEventListener('click',makeCardHandler(+cards[j].getAttribute('data-idx')));
 }
 
 function makeCardHandler(idx){return function(){om(P[idx]);};}
@@ -9833,4 +9831,4 @@ function showSCSub(id){
 
 </script>
 </body>
-</html>
+</html>                                                                                                                                        
